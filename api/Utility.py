@@ -6,9 +6,9 @@ def to_utc(date, date_fmt='%Y-%m-%d %H:%M:%S', from_tz='Asia/Seoul'):
     Convert `from_timezone` into UTC
 
     :param date: formatted date string by `mask`
-    :param mask: format of `date`,
-                 default: ISO 8601 format (YYYY-MM-DD HH:MM:SS)
-    :param from_tz: timezone name of `date`
+    :param date_fmt: format of `date`,
+                     default: ISO 8601 format (YYYY-MM-DD HH:MM:SS)
+    :param from_tz: timezone name of `date` (such as 'Asia/Seoul')
     :return: UTC date string e.g '2014-03-05 12:23:00 UTC+0000'
     '''
     utc = pytz.utc
