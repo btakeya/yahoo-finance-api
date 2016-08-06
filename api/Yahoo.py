@@ -1,3 +1,5 @@
+from Utility import *
+
 class YQLBuilder(object):
     
     def __init__(self, symbol):
@@ -105,7 +107,7 @@ class Currency(object):
         q_date = data['Date']
         q_time = data['Time']
         if q_date and q_time:
-            utc_datetime = to_utc('{0} {1}'.format(q_date, q_time))
+            utc_datetime = Utility.to_utc('{0} {1}'.format(q_date, q_time))
             data[u'DateTimeUTC'] = utc_datetime
 
         return data
