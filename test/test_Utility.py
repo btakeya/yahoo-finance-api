@@ -14,7 +14,7 @@ class TestUtility(unittest.TestCase):
         desired_utc_time = '2016-08-03 14:40:30 UTC+0000'
         converted_time = to_utc(in_kst_time)
 
-        self.assertEqual(desired_utc_time, converted_utc_time,
+        self.assertEqual(desired_utc_time, converted_time,
                          'Desired: {} - Converted: {}\n'
                          .format(desired_utc_time, converted_time))
 
@@ -24,10 +24,10 @@ class TestUtility(unittest.TestCase):
         desired_utc_time = '2016-08-04 06:40:30 UTC+0000'
         converted_time_from_pdt = to_utc(in_pdt_time, from_tz='US/Pacific')
 
-        self.assertNotEqual(desired_utc_time,
-                            converted_utc_time_as_pdt,
-                            'Desired: {} - Converted: {}\n'
-                            .format(desired_utc_time, converted_time_from_pdt))
+        self.assertEqual(desired_utc_time,
+                         converted_time_from_pdt,
+                         'Desired: {} - Converted: {}\n'
+                         .format(desired_utc_time, converted_time_from_pdt))
 
     def tearDown(self):
         pass
